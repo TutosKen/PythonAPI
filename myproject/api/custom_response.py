@@ -4,9 +4,8 @@ from rest_framework import status
 
 class CustomResponse():
 
-    response_attributes = {}
-
     def __init__(self):
+        self.response_attributes = {}
         self.add_update_response_attr("success", True)
         self.add_update_response_attr("error_code", 0)
 

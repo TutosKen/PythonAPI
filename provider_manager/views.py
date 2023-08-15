@@ -7,13 +7,12 @@ from rest_framework.exceptions import ValidationError
 from django.core.exceptions import ObjectDoesNotExist
 from .providers.banking.example import Example
 
-# Global instances for this file
-res = CustomResponse()
-
-
 # Get customer account balance
+
+
 @api_view(['POST'])
 def get_balance(request):
+    res = CustomResponse()
     serializer = ProviderGetBalanceSerializer(data=request.data)
 
     try:
