@@ -29,14 +29,15 @@ def validate_credentials(request):
             if encoder.argon2_verify(pwd, match_merchant.password):
                 new_token = encoder.generate_auth_token()
 
-            try:
-                merchant_token = MerchantToken.objects.get(
-                    merchant_id=match_merchant.id)
-            except ObjectDoesNotExist:
-                merchant_token = None
+                try:
+                    merchant_token = MerchantToken.objects.get(
+                        merchant_id=match_merchant.id)
+                except ObjectDoesNotExist:
+                    merchant_token = None
 
                 if merchant_token is not None:
                     merchant_token.token = new_token
+                    merchant_token.active = True
                     merchant_token.save()
                 else:
                     MerchantToken.objects.create(
