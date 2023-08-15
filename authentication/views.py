@@ -7,14 +7,12 @@ from rest_framework.serializers import ValidationError
 from django.core.exceptions import ObjectDoesNotExist
 from myproject.util.encoding import Encoding
 
-# Global instances for this file
-res = CustomResponse()
-
 # Validate credentials and generate an auth token
 
 
 @api_view(['POST'])
 def validate_credentials(request):
+    res = CustomResponse()
     serializer = MerchantSerializer(data=request.data)
 
     try:
@@ -59,6 +57,7 @@ def validate_credentials(request):
 # Dummy function to see how response works
 @api_view(['POST'])
 def dummyEndpoint(request):
+    res = CustomResponse()
     res.add_update_response_attr(
         "message", "Yeap, you guessed it, it's just a dumb endpoint")
     return res.success_response()
