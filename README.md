@@ -7,7 +7,7 @@ Download and install python for windows from the following link -> https://www.p
 MAKE SURE TO CHECK THE OPTION "Add Python.exe to System PATH" ONCE IT SHOWS UP!!!
 
 Exeucting the project:
-1. Clone the repo in a folder
+1. Clone the repo
 2. Open VS Code -> Open Folder -> Select folder where you cloned the repo
 3. Go to myproject/settings.py line 79 and modify database configuration (The project uses mySQL DB)
 4. Open a terminal and run the following commands:
