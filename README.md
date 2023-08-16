@@ -10,7 +10,8 @@ Exeucting the project:
 1. Clone the repo
 2. Open VS Code -> Open Folder -> Select folder where you cloned the repo
 3. Go to myproject/settings.py line 79 and modify database configuration (The project uses mySQL DB)
-4. Open a terminal and run the following commands:
+4. Run the following command -> python manage.py migrate
+5. Open a terminal and run the following commands:
    - env\Scripts\Activate #This will activate the virtual env
    - pip install -r requirements.txt #Install required libraries
    - python manage.py runserver #Run the server by default port 8000
